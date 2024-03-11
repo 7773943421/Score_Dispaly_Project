@@ -1,0 +1,304 @@
+<!-- main-area start -->
+<div class="main-area">
+    <section class="inner-banner">
+        <div class="image-layer" style="background-image: url(./assets/images/banner/inner-banner.png);"></div>
+        <div class="container">
+            <div class="row mb-0">
+                <div class="col l12 m12 s12">
+                    <div class="inner-banner-content" *ngIf="fullScore">
+                        <h1>{{fullScore.es.tsn1}} VS {{fullScore.es.tsn2}}</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="match-result">
+        <div class="container">
+            <div class="row">
+                <div class="col s12">
+                    <div class="team-detail d-flex align-items-center">
+                        <iframe _ngcontent-uum-c26="" id="idIframe" frameborder="0" width="100%" scrolling="no"
+                            class="iframeclass" style="border: none; border-radius: 40px 40px 0px 0px;"
+                            [src]="sanitizedUrl" height="133">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </div> 
+    </section>
+
+    <section class="complete-matches-detail">
+        <div class="container">
+            <div class="row" *ngIf="fullScore">
+                <div class="col s12">
+                    <ul class="tabs">
+                        <li class="tab"  *ngIf="fullScore.bat1 && fullScore.bat1.length > 0"><a  [class.active]="selectedTeam == fullScore.es.tn1" (click)="onteamClick(fullScore.es.tn1)">{{fullScore.es.tn1}}</a></li>
+                        <li class="tab" *ngIf="fullScore.bat2 && fullScore.bat2.length > 0"><a [class.active]="selectedTeam == fullScore.es.tn2" (click)="onteamClick(fullScore.es.tn2)">{{fullScore.es.tn2}}</a></li>
+                        <li class="tab"><a [class.active]="selectedTeam == 'SQUAD'" (click)="onteamClick('SQUAD')">SQUAD</a> </li>
+                    </ul>
+                </div>
+                <div id="team1" *ngIf="selectedTeam == fullScore.es.tn1 && fullScore.bat1 && fullScore.bat1.length > 0" class="col s12">
+                    <div class="matches-score">
+                        <div class="score-heading">
+                            <div class="d-flex">
+                                <div class="w-40">
+                                    <h3>Batter</h3>
+                                </div>
+                                <div class="w-15">
+                                    <h3>R</h3>
+                                </div>
+                                <div class="w-15">
+                                    <h3>4s</h3>
+                                </div>
+                                <div class="w-15">
+                                    <h3>6s</h3>
+                                </div>
+                                <div class="w-15">
+                                    <h3>SR</h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="score-board">
+                            <div class="d-flex align-items-center" *ngFor="let score of fullScore?.bat1">
+                                <div class="w-40 player-name">
+                                    <p><a href="">{{score.btn}}</a></p>
+                                    <span>{{score.wkp}}</span>
+                                </div>
+                                <div class="w-15">
+                                    <p>{{score.rbl}}</p>
+                                </div>
+                                <div class="w-15">
+                                    <p>{{score.four}}</p>
+                                </div>
+                                <div class="w-15">
+                                    <p>{{score.six}}</p>
+                                </div>
+                                <div class="w-15">
+                                    <p>{{score.strk}}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div *ngIf="selectedTeam == fullScore.es.tn1 && fullScore.bow2 && fullScore.bow2.length > 0" class="matches-score">
+                        <div class="score-heading">
+                            <div class="d-flex">
+                                <div class="w-40">
+                                    <h3>Bowler</h3>
+                                </div>
+                                <div class="w-15">
+                                    <h3>O</h3>
+                                </div>
+                                <div class="w-15">
+                                    <h3>M</h3>
+                                </div>
+                                <div class="w-15">
+                                    <h3>R</h3>
+                                </div>
+                                <div class="w-15">
+                                    <h3>W</h3>
+                                </div>
+                                <div class="w-15">
+                                    <h3>Econ</h3>
+                                </div>
+                                <div class="w-15">
+                                    <h3>Extras</h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="score-board">
+                            <div class="d-flex align-items-center" *ngFor="let score of fullScore?.bow2">
+                                <div class="w-40 player-name">
+                                    <p><a href="">{{score.pln}}</a></p>
+                                </div>
+                                <div class="w-15">
+                                    <p>{{score.ovr}}</p>
+                                </div>
+                                <div class="w-15">
+                                    <p>{{score.mov}}</p>
+                                </div>
+                                <div class="w-15">
+                                    <p>{{score.trun}}</p>
+                                </div>
+                                <div class="w-15">
+                                    <p>{{score.wkt}}</p>
+                                </div>
+                                <div class="w-15">
+                                    <p>{{score.dot}}</p>
+                                </div>
+                                <div class="w-15">
+                                    <p>{{score.xtr}}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <section class="fall-of-wicket">
+                        <div class="container">
+                            <div class="row">
+                                <h2>Fall of Wicket</h2>
+                                <div class="wicket-list">
+                                    <div class="player-wicket" *ngFor="let score of fullScore?.fow1">
+                                        {{score.pn1}} at {{score.sco1}}, in {{score.ovr1}}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+
+                <div id="team2" *ngIf="selectedTeam == fullScore.es.tn2 && fullScore.bat2 && fullScore.bat2.length > 0" class="col s12">
+                    <div class="matches-score">
+                        <div class="score-heading">
+                            <div class="d-flex">
+                                <div class="w-40">
+                                    <h3>Batter</h3>
+                                </div>
+                                <div class="w-15">
+                                    <h3>R</h3>
+                                </div>
+                                <div class="w-15">
+                                    <h3>4s</h3>
+                                </div>
+                                <div class="w-15">
+                                    <h3>6s</h3>
+                                </div>
+                                <div class="w-15">
+                                    <h3>SR</h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="score-board">
+                            <div class="d-flex align-items-center" *ngFor="let score of fullScore?.bat2">
+                                <div class="w-40 player-name">
+                                    <p><a href="">{{score.btn}}</a></p>
+                                    <span>{{score.wkp}}</span>
+                                </div>
+                                <div class="w-15">
+                                    <p>{{score.rbl}}</p>
+                                </div>
+                                <div class="w-15">
+                                    <p>{{score.four}}</p>
+                                </div>
+                                <div class="w-15">
+                                    <p>{{score.six}}</p>
+                                </div>
+                                <div class="w-15">
+                                    <p>{{score.strk}}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div *ngIf="selectedTeam == fullScore.es.tn2 && fullScore.bow1 && fullScore.bow1.length > 0" class="matches-score">
+                        <div class="score-heading">
+                            <div class="d-flex">
+                                <div class="w-40">
+                                    <h3>Bowler</h3>
+                                </div>
+                                <div class="w-15">
+                                    <h3>O</h3>
+                                </div>
+                                <div class="w-15">
+                                    <h3>M</h3>
+                                </div>
+                                <div class="w-15">
+                                    <h3>R</h3>
+                                </div>
+                                <div class="w-15">
+                                    <h3>W</h3>
+                                </div>
+                                <div class="w-15">
+                                    <h3>Econ</h3>
+                                </div>
+                                <div class="w-15">
+                                    <h3>Extras</h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="score-board">
+                            <div class="d-flex align-items-center" *ngFor="let score of fullScore.bow1">
+                                <div class="w-40 player-name">
+                                    <p><a href="">{{score.pln}}</a></p>
+                                </div>
+                                <div class="w-15">
+                                    <p>{{score.ovr}}</p>
+                                </div>
+                                <div class="w-15">
+                                    <p>{{score.mov}}</p>
+                                </div>
+                                <div class="w-15">
+                                    <p>{{score.trun}}</p>
+                                </div>
+                                <div class="w-15">
+                                    <p>{{score.wkt}}</p>
+                                </div>
+                                <div class="w-15">
+                                    <p>{{score.dot}}</p>
+                                </div>
+                                <div class="w-15">
+                                    <p>{{score.xtr}}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <section class="fall-of-wicket">
+                        <div class="container">
+                            <div class="row">
+                                <h2>Fall of Wicket</h2>
+                                <div class="wicket-list">
+                                    <div class="player-wicket" *ngFor="let score of fullScore.fow2">
+                                        {{score.pn2}} at {{score.sco2}}, in {{score.ovr2}}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+
+                <!-- Squad -->
+                <div *ngIf="selectedTeam == 'SQUAD'" class="col s12">
+                    <div class="matches-score">
+                        <div class="score-heading">
+                            <div class="d-flex">
+                                <div class="w-40">
+                                    <h3 *ngIf="fullSquads">{{fullSquads.tm.t1n}}</h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="score-board">
+                            <div class="d-flex align-items-center" *ngFor="let squad of fullSquads.t1p">
+                                <div class="w-40 player-name">
+                                    <p><a href=""> {{squad.pn}}</a></p>
+                                </div>
+                                <div class="w-60">
+                                    <p>{{squad.pty}}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="matches-score">
+                        <div class="score-heading">
+                            <div class="d-flex">
+                                <div class="w-40">
+                                    <h3 *ngIf="fullSquads">{{fullSquads.tm.t2n}}</h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="score-board">
+                            <div class="d-flex align-items-center" *ngFor="let squad of fullSquads.t2p">
+                                <div class="w-40 player-name">
+                                    <p><a href=""> {{squad.pn}}</a></p>
+                                </div>
+                                <div class="w-60">
+                                    <p>{{squad.pty}}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Squad -->
+            </div>
+        </div>
+    </section>
+</div>

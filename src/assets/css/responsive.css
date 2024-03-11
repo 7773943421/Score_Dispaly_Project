@@ -1,0 +1,362 @@
+/*
+--------------------------------------------------------------------------------------------------------
+* Template Name             : Hattrickk                                                                *
+* Author                    : Hattrickk                                                                *
+* Version                   : 1.0                                                                      *
+* Design and Developed by   : Hattrickk                                                                * 
+*-------------------------------------------------------------------------------------------------------
+NOTE: This is main stylesheet of template, This file contains the styling for the actual Template.
+*/
+
+
+/*=================================================
+:: Responsive Media Query (less than 991px)
+==================================================*/
+
+@media only screen and (max-width: 1920px) {
+    .container {
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 991px) {
+    .container,
+    .container-md,
+    .container-sm {
+        max-width: 100%;
+    }
+    .mtb-90 {
+        margin-top: 40px !important;
+        margin-bottom: 40px !important;
+    }
+    .mtb-100 {
+        margin-top: 50px !important;
+        margin-bottom: 50px !important;
+    }
+    .mtb-110 {
+        margin-top: 60px !important;
+        margin-bottom: 60px !important;
+    }
+    .mtb-120 {
+        margin-top: 70px !important;
+        margin-bottom: 70px !important;
+    }
+    .mtb-130 {
+        margin-top: 80px !important;
+        margin-bottom: 80px !important;
+    }
+    .mtb-140 {
+        margin-top: 90px !important;
+        margin-bottom: 90px !important;
+    }
+    .mtb-150 {
+        margin-top: 100px !important;
+        margin-bottom: 100px !important;
+    }
+    .ptb-90 {
+        padding-top: 40px !important;
+        padding-bottom: 40px !important;
+    }
+    .ptb-100 {
+        padding-top: 50px !important;
+        padding-bottom: 50px !important;
+    }
+    .ptb-110 {
+        padding-top: 60px !important;
+        padding-bottom: 60px !important;
+    }
+    .ptb-120 {
+        padding-top: 70px !important;
+        padding-bottom: 70px !important;
+    }
+    .ptb-130 {
+        padding-top: 80px !important;
+        padding-bottom: 80px !important;
+    }
+    .ptb-140 {
+        padding-top: 90px !important;
+        padding-bottom: 90px !important;
+    }
+    .ptb-150 {
+        padding-top: 100px !important;
+        padding-bottom: 100px !important;
+    }
+    /* helper classes */
+    .grid-1 {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .grid-2 {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .grid-3 {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .grid-4 {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .grid-5 {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .grid-6 {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .mobile-info,
+    .mobile-nav-toggler {
+        display: inline-flex;
+    }
+    .navbar-fixed nav .brand-logo {
+        left: 0;
+        transform: translateX(0);
+    }
+    .navbar-fixed nav {
+        padding: 0 5px;
+    }
+    .user-menus ul {
+        gap: 5px;
+    }
+    .work-steps-box {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .banner-text {
+        margin-bottom: 50px;
+    }
+    .work-steps-arrow {
+        display: none;
+    }
+    .banner-image {
+        margin-right: 0;
+    }
+    .Newsletter-widget {
+        padding-left: 0;
+        margin-top: 30px;
+    }
+    .banner-text h1 {
+        font-size: 45px;
+    }
+    .user-menus {
+        margin-left: auto;
+    }
+    .quick-links {
+        position: fixed;
+        top: 0;
+        height: 100vh;
+        background: var(--white-color);
+        left: 0;
+        width: 320px;
+        z-index: 9;
+    }
+    .quick-links ul li {
+        list-style-type: none;
+        display: inline-block;
+        width: 100%;
+    }
+    .navbar-fixed nav .quick-links ul a:after,
+    .navbar-fixed nav .quick-links ul a.active:after {
+        display: none;
+    }
+    .navbar-fixed nav .quick-links ul a {
+        gap: 0;
+        margin: 1px 2px;
+        border-radius: 0;
+        padding: 2px 17px;
+        width: 100%;
+        font-size: 16px;
+    }
+    .mobile-login {
+        display: block;
+    }
+    .desktop-login {
+        display: inline-flex;
+        position: absolute;
+        top: 56px;
+        background: var(--color-extra01);
+        padding: 15px;
+        right: 0;
+        flex-direction: column;
+        gap: 14px;
+        width: 180px;
+        opacity: 0;
+        visibility: hidden;
+    }
+    .desktop-login.show-mobile {
+        opacity: 1;
+        visibility: visible;
+    }
+    .banner-title h1 {
+        font-size: 24px;
+        font-weight: 500;
+        color: var(--white-color);
+    }
+}
+
+
+/*=================================================
+:: Responsive Media Query (less than 767px)
+==================================================*/
+
+@media only screen and (max-width: 767px) {
+    .mtb-90 {
+        margin-top: 30px !important;
+        margin-bottom: 30px !important;
+    }
+    .mtb-100 {
+        margin-top: 40px !important;
+        margin-bottom: 40px !important;
+    }
+    .mtb-110 {
+        margin-top: 40px !important;
+        margin-bottom: 40px !important;
+    }
+    .mtb-120 {
+        margin-top: 50px !important;
+        margin-bottom: 50px !important;
+    }
+    .mtb-130 {
+        margin-top: 60px !important;
+        margin-bottom: 60px !important;
+    }
+    .mtb-140 {
+        margin-top: 70px !important;
+        margin-bottom: 70px !important;
+    }
+    .mtb-150 {
+        margin-top: 80px !important;
+        margin-bottom: 80px !important;
+    }
+    .ptb-90 {
+        padding-top: 30px !important;
+        padding-bottom: 30px !important;
+    }
+    .ptb-100 {
+        padding-top: 40px !important;
+        padding-bottom: 40px !important;
+    }
+    .ptb-110 {
+        padding-top: 40px !important;
+        padding-bottom: 40px !important;
+    }
+    .ptb-120 {
+        padding-top: 50px !important;
+        padding-bottom: 50px !important;
+    }
+    .ptb-130 {
+        padding-top: 60px !important;
+        padding-bottom: 60px !important;
+    }
+    .ptb-140 {
+        padding-top: 70px !important;
+        padding-bottom: 70px !important;
+    }
+    .ptb-150 {
+        padding-top: 80px !important;
+        padding-bottom: 80px !important;
+    }
+    /* helper classes */
+    .grid-2 {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .grid-3 {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .grid-4 {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .grid-5 {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .grid-6 {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .tf-widget {
+        margin-bottom: 30px;
+    }
+    .work-steps-box {
+        grid-template-columns: repeat(1, 1fr);
+        grid-gap: 60px;
+    }
+    .bottom-footer .footer-nav {
+        align-items: center;
+        justify-content: center;
+    }
+    .bottom-footer .paymeny {
+        text-align: center;
+    }
+    .work-area .full-wrap {
+        padding: 0;
+    }
+    .download-content {
+        padding-left: 0;
+        background-size: 210px;
+        background-position: 0px 0;
+        padding-top: 250px;
+    }
+    .testimonial-box {
+        margin-left: 0;
+    }
+    .testimonial-image {
+        display: none;
+    }
+    .testimonial-slider {
+        padding: 30px;
+    }
+    .testimonial-box .owl-carousel .owl-dots {
+        left: 0;
+        right: 0;
+    }
+    .title-full {
+        align-items: self-start;
+        flex-direction: column;
+    }
+    .section-title-box a {
+        margin-top: 20px;
+    }
+}
+
+
+/*=================================================
+:: Responsive Media Query (less than 575px)
+==================================================*/
+
+@media (max-width:575px) {
+    .latest-news-area .section-title-box {
+        flex-direction: column;
+    }
+    .latest-news-content {
+        padding-left: 0;
+    }
+    .latest-news-image {
+        position: relative;
+        margin-bottom: 20px;
+    }
+    .latest-news-all {
+        margin-bottom: 30px;
+    }
+    .live-match-body h6,
+    .live-match-body p {
+        font-size: 13px;
+    }
+    .live-match-body p {
+        font-size: 11px;
+    }
+    .live-match-icon {
+        padding-left: 40px;
+    }
+}
+
+
+/*=================================================
+:: Responsive Media Query (less than 320px)
+==================================================*/
+
+@media (max-width:320px) {}

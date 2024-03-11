@@ -1,0 +1,79 @@
+<div class="main-area">
+    <section class="inner-banner">
+        <div class="image-layer" style="background-image: url(./assets/images/banner/inner-banner.png);"></div>
+        <div class="container">
+            <div class="row mb-0">
+                <div class="col l12 m12 s12">
+                    <div class="inner-banner-content">
+                        <h1>News</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="latest-news-area" style="background: transparent;">
+        <div class="container">
+            <div class="row">
+                <div class="col l8 m8 s12">
+                    <div class="section-title-box">
+                        <h2 class="text-color">Latest News</h2>
+                        <ul class="news-filter">
+                            <li>
+                                <a href="" class="active">
+                                    <svg width="10" height="8" viewBox="0 0 10 8" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M1.33331 3.89247H2.83331L3.98146 0.666666L5.8148 7.33333L7.16665 3.89247H8.66665"
+                                            stroke="white" stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg> All
+                                </a>
+                            </li>
+                            <li>
+                                <a routerLink="news">Cricket News</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="latest-news-item">
+                        <div class="latest-news-list" *ngFor="let news of newsList">
+                            <div class="latest-news-image">
+                                <img [src]="news.img" alt="">
+                            </div>
+                            <div class="latest-news-content">
+                                <h3 [innerHTML]="news.til"></h3>
+                                <p>{{news.cont}}</p>
+                                <ul class="latest-news-meta">
+                                    <li><span>{{news.dateTime}}</span></li>
+                                    <li><span>|</span></li>
+                                    <li><a href={{news.mainUrl}} target="_blank">by criticizer</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col l4 m4 s12">
+                    <div class="series-list-box">
+                        <div class="section-title-box">
+                            <h2 class="text-color">Series List</h2>
+                        </div>
+                        <div class="series-list">
+                            <ul class="series-list-ul" *ngFor="let series of seriesList">
+                                <li>
+                                    <a href="">
+                                        <span>{{series.cna}}</span>
+                                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M7.91663 4.58333H15.4166V12.0833" stroke="#C5141F" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round" />
+                                            <path d="M4.80994 15.19L15.4165 4.58333" stroke="#C5141F" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round" />
+                                        </svg>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>

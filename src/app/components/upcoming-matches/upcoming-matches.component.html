@@ -1,0 +1,111 @@
+<!-- <div class="main-area">
+    <section class="inner-banner">
+        <div class="image-layer" style="background-image: url(./assets/images/banner/inner-banner.png);"></div>
+        <div class="container">
+            <div class="row mb-0">
+                <div class="col l12 m12 s12">
+                    <div class="inner-banner-content">
+                        <h1>Upcoming Matches</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="complete-matches-area">
+        <div class="container">
+            <div class="row">
+                <div class="col l4 m4 s12" *ngFor="let match of ScheduleMatchesList">
+                    <div class="upcoming-item">
+                        <div class="upcoming-inner">
+                            <div class="upcoming-top text-center">
+                                <p>{{ match.en}}</p>
+                            </div>
+                            <div class="upcoming-body">
+                                <div class="upcoming-icon">
+                                    <img [src]="match.te1i" alt="Team 1">
+                                </div>
+                                <span>{{match.s1n}}</span>
+                                <div class="upcoming-time text-center">
+                                    <h6>{{ match.ed }} <br> <span>{{ match.et }}</span></h6>
+                                </div>
+                                <span>{{match.s2n}}</span>
+                                <div class="upcoming-icon">
+                                    <img [src]="match.te2i" alt="Team 2">
+                                </div>
+                            </div>
+                            <div class="upcoming-footer">
+                                <p>
+                                    <svg width="16" height="18" viewBox="0 0 16 18" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M4.2242 4.2763C4.71936 3.79872 5.30779 3.41978 5.95573 3.16122C6.60367 2.90266 7.29835 2.76953 7.99996 2.76953C8.70156 2.76953 9.39631 2.90266 10.0442 3.16122C10.6922 3.41978 11.2806 3.79872 11.7758 4.2763C13.8525 6.28532 13.8525 9.57241 11.7758 11.5795L8.00029 15.2311L4.2242 11.5795C2.14748 9.57241 2.14748 6.28532 4.2242 4.2763Z"
+                                            stroke="black" stroke-linecap="round" stroke-linejoin="round" />
+                                        <path
+                                            d="M8 9.69291C9.10457 9.69291 10 8.76304 10 7.61599C10 6.46893 9.10457 5.53906 8 5.53906C6.89543 5.53906 6 6.46893 6 7.61599C6 8.76304 6.89543 9.69291 8 9.69291Z"
+                                            stroke="black" stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg> {{ match.loc}}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div> -->
+
+<div class="main-area">
+    <section class="inner-banner">
+        <div class="image-layer" style="background-image: url(./assets/images/banner/inner-banner.png);"></div>
+        <div class="container">
+            <div class="row mb-0">
+                <div class="col l12 m12 s12">
+                    <div class="inner-banner-content">
+                        <h1>Upcoming Matches</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="complete-matches-area">
+        <div class="container">
+            <div class="row upcoming-list">
+                <div class="col l4 m4 s12" *ngFor="let match of ScheduleMatchesList">
+                    <div class="upcoming-item">
+                        <div routerLink="/commentary/{{match.eid}}" class="upcoming-inner">
+                            <div class="upcoming-top text-center">
+                                <p>{{ match.en}}</p>
+                            </div>
+                            <div class="upcoming-body">
+                                <div class="upcoming-icon">
+                                    <img [src]="match.te1i" alt="Team 1">
+                                </div>
+                                <span>{{match.s1n}}</span>
+                                <div class="upcoming-time text-center">
+                                    <h6>{{ match.ed }} <br> <span>{{ match.et }}</span></h6>
+                                </div>
+                                <span>{{match.s2n}}</span>
+                                <div class="upcoming-icon">
+                                    <img [src]="match.te2i" alt="Team 2">
+                                </div>
+                            </div>
+                            <div class="upcoming-footer">
+                                <p>
+                                    <svg width="16" height="18" viewBox="0 0 16 18" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M4.2242 4.2763C4.71936 3.79872 5.30779 3.41978 5.95573 3.16122C6.60367 2.90266 7.29835 2.76953 7.99996 2.76953C8.70156 2.76953 9.39631 2.90266 10.0442 3.16122C10.6922 3.41978 11.2806 3.79872 11.7758 4.2763C13.8525 6.28532 13.8525 9.57241 11.7758 11.5795L8.00029 15.2311L4.2242 11.5795C2.14748 9.57241 2.14748 6.28532 4.2242 4.2763Z"
+                                            stroke="black" stroke-linecap="round" stroke-linejoin="round" />
+                                        <path
+                                            d="M8 9.69291C9.10457 9.69291 10 8.76304 10 7.61599C10 6.46893 9.10457 5.53906 8 5.53906C6.89543 5.53906 6 6.46893 6 7.61599C6 8.76304 6.89543 9.69291 8 9.69291Z"
+                                            stroke="black" stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg> {{ match.loc}}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
